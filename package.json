@@ -1,0 +1,26 @@
+{
+  "name": "iotsitewise-data",
+  "version": "1.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "buffer": "^5.5.0",
+    "crypto-browserify": "^3.12.0",
+    "dotenv": "^16.0.3",
+    "events": "^3.1.0",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
+    "typescript": "^4.9.3"
+  },
+  "scripts": {
+    "run": "tsc -p . && node dist/index.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-iotsitewise": "^3.210.0",
+    "command-line-args": "^5.2.1",
+    "uuid": "^9.0.0"
+  },
+  "engines": {
+    "node": ">= 16"
+  }
+}

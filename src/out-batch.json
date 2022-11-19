@@ -1,0 +1,302 @@
+[
+    {
+        "entryId": "a25a66a8-ee0c-4908-8dd6-00db86048392",
+        "assetId": "5a1950f2-01ad-4f04-8b35-13ab855ad745",
+        "propertyId": "9273d1e4-02e2-4879-b819-1ed7a15a7225",
+        "propertyValues": [
+            {
+                "timestamp": {
+                    "timeInSeconds": 1668552512042
+                },
+                "value": {
+                    "doubleValue": 3699.096682041514
+                }
+            }
+        ]
+    },
+    {
+        "entryId": "adb423ba-338e-43fd-97bc-d66357e930a6",
+        "assetId": "5a1950f2-01ad-4f04-8b35-13ab855ad745",
+        "propertyId": "66d7d6f5-7008-41ab-a831-6b3709a74047",
+        "propertyValues": [
+            {
+                "timestamp": {
+                    "timeInSeconds": 1668552512042
+                },
+                "value": {
+                    "doubleValue": 13.35778734855333
+                }
+            }
+        ]
+    },
+    {
+        "entryId": "c44da8b1-3d02-4b27-ab2f-20a10c835c44",
+        "assetId": "571c6b4d-34c9-4eda-8a37-ce7b67d389c6",
+        "propertyId": "9273d1e4-02e2-4879-b819-1ed7a15a7225",
+        "propertyValues": [
+            {
+                "timestamp": {
+                    "timeInSeconds": 1668552512042
+                },
+                "value": {
+                    "doubleValue": 3676.9040287507064
+                }
+            }
+        ]
+    },
+    {
+        "entryId": "dcde5f8f-3520-4636-aef9-b8ed90a80ce0",
+        "assetId": "571c6b4d-34c9-4eda-8a37-ce7b67d389c6",
+        "propertyId": "66d7d6f5-7008-41ab-a831-6b3709a74047",
+        "propertyValues": [
+            {
+                "timestamp": {
+                    "timeInSeconds": 1668552512042
+                },
+                "value": {
+                    "doubleValue": 15.429272077105484
+                }
+            }
+        ]
+    },
+    {
+        "entryId": "44fc44a6-75f1-4758-8fb4-a077c26dd78a",
+        "assetId": "de36257c-9734-4bfe-b89c-96a07ad07824",
+        "propertyId": "9273d1e4-02e2-4879-b819-1ed7a15a7225",
+        "propertyValues": [
+            {
+                "timestamp": {
+                    "timeInSeconds": 1668552512042
+                },
+                "value": {
+                    "doubleValue": 3819.222371770361
+                }
+            }
+        ]
+    },
+    {
+        "entryId": "d35cf1ab-319a-452a-a485-a231292da494",
+        "assetId": "de36257c-9734-4bfe-b89c-96a07ad07824",
+        "propertyId": "66d7d6f5-7008-41ab-a831-6b3709a74047",
+        "propertyValues": [
+            {
+                "timestamp": {
+                    "timeInSeconds": 1668552512042
+                },
+                "value": {
+                    "doubleValue": 48.829379872280896
+                }
+            }
+        ]
+    },
+    {
+        "entryId": "f701c700-d047-48d0-be2f-272b1b39593d",
+        "assetId": "a8ad2c96-e78e-4ba4-a49a-9a8604380849",
+        "propertyId": "9273d1e4-02e2-4879-b819-1ed7a15a7225",
+        "propertyValues": [
+            {
+                "timestamp": {
+                    "timeInSeconds": 1668552512042
+                },
+                "value": {
+                    "doubleValue": 3949.028855425202
+                }
+            }
+        ]
+    },
+    {
+        "entryId": "fd925b07-ce80-436d-a094-a51953b24dac",
+        "assetId": "a8ad2c96-e78e-4ba4-a49a-9a8604380849",
+        "propertyId": "66d7d6f5-7008-41ab-a831-6b3709a74047",
+        "propertyValues": [
+            {
+                "timestamp": {
+                    "timeInSeconds": 1668552512042
+                },
+                "value": {
+                    "doubleValue": 1.9765007325156247
+                }
+            }
+        ]
+    },
+    {
+        "entryId": "3ffb740f-75e1-42a5-b585-ebf023266513",
+        "assetId": "b2d02e71-2f59-408a-88a4-8a8bf6d9e3c5",
+        "propertyId": "9273d1e4-02e2-4879-b819-1ed7a15a7225",
+        "propertyValues": [
+            {
+                "timestamp": {
+                    "timeInSeconds": 1668552512042
+                },
+                "value": {
+                    "doubleValue": 2488.900836462097
+                }
+            }
+        ]
+    },
+    {
+        "entryId": "d0c6f334-9b2b-4e16-898b-499c91a7a7bd",
+        "assetId": "b2d02e71-2f59-408a-88a4-8a8bf6d9e3c5",
+        "propertyId": "66d7d6f5-7008-41ab-a831-6b3709a74047",
+        "propertyValues": [
+            {
+                "timestamp": {
+                    "timeInSeconds": 1668552512042
+                },
+                "value": {
+                    "doubleValue": 22.47178768985771
+                }
+            }
+        ]
+    },
+    {
+        "entryId": "e1d1d7d1-e5fc-4265-8c75-a93289252cf5",
+        "assetId": "ac8bcd93-5b68-4abb-9fe2-0372cd6a1c84",
+        "propertyId": "9273d1e4-02e2-4879-b819-1ed7a15a7225",
+        "propertyValues": [
+            {
+                "timestamp": {
+                    "timeInSeconds": 1668552512042
+                },
+                "value": {
+                    "doubleValue": 4386.881018620232
+                }
+            }
+        ]
+    },
+    {
+        "entryId": "695e347f-4d14-4f55-a044-98b5493a60bc",
+        "assetId": "ac8bcd93-5b68-4abb-9fe2-0372cd6a1c84",
+        "propertyId": "66d7d6f5-7008-41ab-a831-6b3709a74047",
+        "propertyValues": [
+            {
+                "timestamp": {
+                    "timeInSeconds": 1668552512042
+                },
+                "value": {
+                    "doubleValue": 1.3867978094143696
+                }
+            }
+        ]
+    },
+    {
+        "entryId": "879fb821-1902-47a7-be1e-6d911060f0ae",
+        "assetId": "ac244b5f-b7e6-44f6-8757-f74beb441507",
+        "propertyId": "9273d1e4-02e2-4879-b819-1ed7a15a7225",
+        "propertyValues": [
+            {
+                "timestamp": {
+                    "timeInSeconds": 1668552512042
+                },
+                "value": {
+                    "doubleValue": 2559.11415648774
+                }
+            }
+        ]
+    },
+    {
+        "entryId": "34a9ac18-b965-4440-85bd-1c1dae271bd0",
+        "assetId": "ac244b5f-b7e6-44f6-8757-f74beb441507",
+        "propertyId": "66d7d6f5-7008-41ab-a831-6b3709a74047",
+        "propertyValues": [
+            {
+                "timestamp": {
+                    "timeInSeconds": 1668552512042
+                },
+                "value": {
+                    "doubleValue": 5.125284647330699
+                }
+            }
+        ]
+    },
+    {
+        "entryId": "f1f4af90-2130-413f-88ed-882d1c7866b5",
+        "assetId": "917b5b1c-b9bc-4296-ab01-c5cd51d5af07",
+        "propertyId": "9273d1e4-02e2-4879-b819-1ed7a15a7225",
+        "propertyValues": [
+            {
+                "timestamp": {
+                    "timeInSeconds": 1668552512042
+                },
+                "value": {
+                    "doubleValue": 4268.76281992011
+                }
+            }
+        ]
+    },
+    {
+        "entryId": "92121885-e7ed-403a-938e-7a75c89cb1df",
+        "assetId": "917b5b1c-b9bc-4296-ab01-c5cd51d5af07",
+        "propertyId": "66d7d6f5-7008-41ab-a831-6b3709a74047",
+        "propertyValues": [
+            {
+                "timestamp": {
+                    "timeInSeconds": 1668552512042
+                },
+                "value": {
+                    "doubleValue": 33.77020373277779
+                }
+            }
+        ]
+    },
+    {
+        "entryId": "642b67ed-cab8-4ec3-8469-23519f2ebdec",
+        "assetId": "329ee103-5cf1-4924-9e03-792d4f602dd8",
+        "propertyId": "9273d1e4-02e2-4879-b819-1ed7a15a7225",
+        "propertyValues": [
+            {
+                "timestamp": {
+                    "timeInSeconds": 1668552512042
+                },
+                "value": {
+                    "doubleValue": 3910.5379922199136
+                }
+            }
+        ]
+    },
+    {
+        "entryId": "3438cd55-ca1a-490d-b3f6-f53a0abdb9d3",
+        "assetId": "329ee103-5cf1-4924-9e03-792d4f602dd8",
+        "propertyId": "66d7d6f5-7008-41ab-a831-6b3709a74047",
+        "propertyValues": [
+            {
+                "timestamp": {
+                    "timeInSeconds": 1668552512042
+                },
+                "value": {
+                    "doubleValue": 22.155697628195668
+                }
+            }
+        ]
+    },
+    {
+        "entryId": "2d4976dc-92d2-4ac8-8582-39e636aafed3",
+        "assetId": "d83eaf80-1006-45d2-9174-bf40576623d1",
+        "propertyId": "9273d1e4-02e2-4879-b819-1ed7a15a7225",
+        "propertyValues": [
+            {
+                "timestamp": {
+                    "timeInSeconds": 1668552512042
+                },
+                "value": {
+                    "doubleValue": 4325.037506713339
+                }
+            }
+        ]
+    },
+    {
+        "entryId": "a452367e-8373-4f11-a7b7-571a7fb1002e",
+        "assetId": "d83eaf80-1006-45d2-9174-bf40576623d1",
+        "propertyId": "66d7d6f5-7008-41ab-a831-6b3709a74047",
+        "propertyValues": [
+            {
+                "timestamp": {
+                    "timeInSeconds": 1668552512043
+                },
+                "value": {
+                    "doubleValue": 23.928818643495305
+                }
+            }
+        ]
+    }
+]

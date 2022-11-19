@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "module": "Node16",
+        "lib": ["DOM", "ESNext"],
+        "resolveJsonModule": true,
+        "outDir": "dist",
+        "rootDir": "src/"
+    }
+}

@@ -1,0 +1,5 @@
+[
+    { "name": "Platform",   "elementId": "0x40000000453" },
+    { "name": "Traveler Space",  "elementId": "0x1e000000040c" },
+    { "name": "Street Level",  "elementId": "0x1e000000040b" }
+]
