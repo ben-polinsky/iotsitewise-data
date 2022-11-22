@@ -13,18 +13,19 @@ import { v4 } from "uuid";
 
 config();
 
-let results: { assetName: string; assetId: string; modelId: string, elementId: string }[] = [];
-
-// what we should be doing is starting with a base line time
-// and then just incrementing off that
-// create a fake clock or something you can control..
+let results: {
+  assetName: string;
+  assetId: string;
+  modelId: string;
+  elementId: string;
+}[] = [];
 
 function generateBatchValues() {
-  const batch: PutAssetPropertyValueEntry[] = [];
+  const batchQueue: PutAssetPropertyValueEntry[] = [];
 
   results.forEach((result) => {
     // let runningTotalOfPeople = 0;
-    batch.push(
+    batchQueue.push(
       {
         entryId: v4(),
         assetId: result.assetId,
@@ -32,7 +33,7 @@ function generateBatchValues() {
         propertyValues: [
           {
             timestamp: { timeInSeconds: Date.now() / 1000 },
-            value: { integerValue: Math.floor(Math.random() * 120)  },
+            value: { integerValue: Math.floor(Math.random() * 200) },
           },
         ],
       },
@@ -43,10 +44,10 @@ function generateBatchValues() {
         propertyValues: [
           {
             timestamp: { timeInSeconds: Date.now() / 1000 },
-            value: { stringValue: result.elementId  },
+            value: { stringValue: result.elementId },
           },
         ],
-      },
+      }
       // {
       //   entryId: v4(),
       //   assetId: result.assetId,
@@ -72,14 +73,14 @@ function generateBatchValues() {
     );
   });
 
-  return batch;
+  return batchQueue;
 }
+const numberOfPropertyValueRuns = -1;
 
 async function run() {
-  let createAssets = false
-  let retryProperties = false
-  const numberOfPropertyValueRuns = 20;
-  const batchCoolDownMs = 1000; 
+  let createAssets = false;
+  let retryProperties = false;
+  const batchCoolDownMs = 1000;
 
   const client = new IoTSiteWiseClient({
     region: "us-east-1",
@@ -100,51 +101,29 @@ async function run() {
         assetName: name,
         assetId: res.assetId,
         modelId,
-        elementId 
+        elementId,
       });
     }
-    
+
     await writeFile(
       resolve(__dirname, "out.json"),
       JSON.stringify(results, null, 4),
       "utf8"
     );
-
   } else {
     const resultsS = await readFile(resolve(__dirname, "out.json"), "utf8");
     results = JSON.parse(resultsS);
   }
 
-  let batch: PutAssetPropertyValueEntry[] = []
-
-  if (!retryProperties){
-    
-    for(let i = 0; i < numberOfPropertyValueRuns; ++i){
-      if (i > 0) await wait(batchCoolDownMs) // this is unnecssary beacuse we're writing fake data... 
-      batch.push(...generateBatchValues())
+  if (numberOfPropertyValueRuns === -1) {
+    while (true) {
+      await generateAndUpload(injestor);
     }
-    
-    await writeFile(
-      resolve(__dirname, "out-batch.json"),
-      JSON.stringify(batch, null, 4),
-      "utf8"
-    );
   } else {
-    const batchSt = await readFile(resolve(__dirname, "out-batch.json"), "utf8")
-    batch = JSON.parse(batchSt)
-  }
-  
-  const responses = await injestor.batchPutAssetPropertyValues(batch);
-
-  for (let res of responses){
-    if (res.errorEntries.length) {
-      console.error(res.errorEntries);
-      await writeFile(resolve(__dirname, `errors_${Math.floor(Date.now()/10000)}.json`), JSON.stringify(res, null, 4), "utf8")
-      console.log("ERRORS OCCURRED - Please check errors_*.log")
+    for (let i = 0; i < numberOfPropertyValueRuns; ++i) {
+      await generateAndUpload(injestor);
     }
-    console.log(res);
   }
-
 }
 
 run()
@@ -155,11 +134,28 @@ run()
     console.error(e);
   });
 
+async function wait(timeToWaitMS: number) {
+  return new Promise<void>((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, timeToWaitMS);
+  });
+}
 
-  async function wait(timeToWaitMS: number){
-    return new Promise<void>(resolve => {
-      setTimeout(() => {
-        resolve()
-      }, timeToWaitMS)
-    })
+async function generateAndUpload(injestor) {
+  const values = generateBatchValues(); // fire and forget
+  const responses = await injestor.batchPutAssetPropertyValues(values);
+  for (let res of responses) {
+    if (res.errorEntries.length) {
+      console.error(res.errorEntries);
+      await writeFile(
+        resolve(__dirname, `errors_${Math.floor(Date.now() / 10000)}.json`),
+        JSON.stringify(res, null, 4),
+        "utf8"
+      );
+      console.log("ERRORS OCCURRED - Please check errors_*.log");
+    }
+    console.log(res);
   }
+  await wait(1000); // seems like anything less than a second overwrites previous entries...
+}

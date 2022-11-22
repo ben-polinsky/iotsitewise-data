@@ -33,15 +33,14 @@ export class IoTSiteWiseDataInjestor {
   ) {
     const responses = []
     // API only allows 10 asset property value puts per-call.
-    let numberOfCalls = 1
-    console.log(`Entries length: ${entries.length}`)
+
+    console.log(`uploading Entries length: ${entries.length}`)
     while (entries.length) {
       const thisBatch = entries.splice(0, 10);
-      console.log(`Entries length after splice: ${entries.length}`)
+   
       const input: BatchPutAssetPropertyValueCommandInput = {
         entries: thisBatch,
       };
-      console.log(`Putting property values batch ${numberOfCalls++}`)
       const cmd = new BatchPutAssetPropertyValueCommand(input);
       const res = await this.client.send(cmd)
       responses.push(res);
