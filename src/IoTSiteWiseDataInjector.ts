@@ -7,15 +7,15 @@ import {
   ListAssetModelsCommand,
   PutAssetPropertyValueEntry,
 } from "@aws-sdk/client-iotsitewise";
+import { writeFile } from "fs/promises";
+import { resolve } from "path";
+import { wait } from "./common";
 
 interface CreateAssetsOptions {
   assetName?: string;
 }
 
 export class IoTSiteWiseDataInjestor {
-  /**
-   *
-   */
   constructor(private client: IoTSiteWiseClient) {}
 
   public async createAsset(modelId: string, options: CreateAssetsOptions) {
@@ -51,4 +51,23 @@ export class IoTSiteWiseDataInjestor {
   public async listModels() {
     return this.client.send(new ListAssetModelsCommand({}));
   }
+
+  async putAssetPropertiesWorkflow(values) {
+    const responses = await this.batchPutAssetPropertyValues(values);
+    for (let res of responses) {
+      if (res.errorEntries.length) {
+        console.error(res.errorEntries);
+        const errorStamp = Math.floor(Date.now() / 10000);
+        await writeFile(
+          resolve(__dirname, `errors_${errorStamp}.json`),
+          JSON.stringify(res, null, 4),
+          "utf8"
+        );
+        console.log(`Errors - Please check errors_${errorStamp}.log`);
+      }
+      console.log(res);
+    }
+    await wait(1000); // seems like anything less than a second overwrites previous entries...
+  }
 }
+
